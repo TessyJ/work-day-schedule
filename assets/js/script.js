@@ -44,6 +44,16 @@ $(function () {
         localStorage.setItem('events', JSON.stringify(events));
       });
 
+      //populate events into fields to show even after refresh
+
+      var event = events.find(function(event) {
+        return event.hour === hour;
+      });
+      
+      if (event) {
+        descriptionColumn.val(event.text);
+       }
+
     }
 
      
