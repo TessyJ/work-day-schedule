@@ -3,9 +3,11 @@
 // in the html.
 $(function () {
 
+    var events = JSON.parse(localStorage.getItem('events')) || [];
+
     // Generate schedule fields from here
     // Create a time block for each hour of the day
-    for (var hour = 0; hour < 24; hour++) {
+    for (var hour = 9; hour < 24; hour++) {
       var timeBlock = $('<div>').addClass('row time-block ');
       var hourColumn = $('<div>').addClass('col-2 col-md-1 hour text-center py-3').text(hour);
       var descriptionColumn = $('<textarea row="3">').addClass('col-8 col-md-10 description');
@@ -15,17 +17,36 @@ $(function () {
       timeBlock.append(hourColumn, descriptionColumn, saveButton);
       $('.container-lg').append(timeBlock);
 
+      //apply past present or future class to each schedule 
+      var timeDifference = hour - dayjs().hour()
+
+      //check if time is past or present or future
+      if(timeDifference < 0){
+        descriptionColumn.addClass('past')
+      } else if(timeDifference === 0){
+        descriptionColumn.addClass('present')
+      } else{
+        descriptionColumn.addClass('future')
+      }
+
+      //save on click of button to localstorage
+      saveButton.on('click', function() {
+        var hour = parseInt($(this).siblings('.hour').text());
+        var text = $(this).siblings('.description').val();
+        var event = events.find(function(event) {
+            return event.hour === hour;
+        });
+        if (event) {
+            event.text = text;
+        } else {
+            events.push({ hour: hour, text: text });
+        }
+        localStorage.setItem('events', JSON.stringify(events));
+      });
+
     }
 
-
-
-    
-    // TODO: Add code to apply the past, present, or future class to each time
-    // block by comparing the id to the current hour. HINTS: How can the id
-    // attribute of each time-block be used to conditionally add or remove the
-    // past, present, and future classes? How can Day.js be used to get the
-    // current hour in 24-hour time?
-    //
+     
     // TODO: Add code to get any user input that was saved in localStorage and set
     // the values of the corresponding textarea elements. HINT: How can the id
     // attribute of each time-block be used to do this?
