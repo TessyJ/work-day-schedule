@@ -1,4 +1,4 @@
-# Project Name - work-day-schedule
+# Project Name - Work Day Schedule
 
 # Project URL 
 https://tessyj.github.io/work-day-schedule/
@@ -14,9 +14,8 @@ This calendar helps to manage time effectively by addding our important events t
 It provides a special feature that allows user to knoow which task has been executed, presently executing and is yet to execute by displaying different colors.
 
 # Project Screenshot
-<img width="1600" alt="Home Page" src="https://tessyj.github.io/work-day-schedule/assets/images/shot1.png">
+<img width="1600" alt="Daily Planner" src="https://tessyj.github.io/work-day-schedule/assets/images/shot1.png">
 <br> <br>
 
-<img width="1600" alt="Invalid Input" src="https://tessyj.github.io/work-day-schedule/assets/images/shot2.png">
+<img width="1600" alt="Events List" src="https://tessyj.github.io/work-day-schedule/assets/images/shot2.png">
 <br> <br> 
-
