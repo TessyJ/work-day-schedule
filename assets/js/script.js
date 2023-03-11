@@ -9,7 +9,7 @@ $(function () {
     // Create a time block for each hour of the day
     for (var hour = 9; hour < 24; hour++) {
       var timeBlock = $('<div>').addClass('row time-block ');
-      var hourColumn = $('<div>').addClass('col-2 col-md-1 hour text-center py-3').text(checkHour(hour));
+      var hourColumn = $('<div>').addClass('col-2 col-md-1 hour text-center py-3').text(checkHour(hour)).attr('data-hour',hour);
       var descriptionColumn = $('<textarea row="3">').addClass('col-8 col-md-10 description');
       var saveButton = $('<button>').addClass('btn saveBtn col-2 col-md-1').html('<i class="fas fa-save" aria-hidden="true"></i>');
 
@@ -31,7 +31,7 @@ $(function () {
 
       //save on click of button to localstorage
       saveButton.on('click', function() {
-        var hour = parseInt($(this).siblings('.hour').text());
+        var hour = parseInt($(this).siblings('.hour').data('hour')); 
         var text = $(this).siblings('.description').val();
         var event = events.find(function(event) {
             return event.hour === hour;
@@ -41,6 +41,8 @@ $(function () {
         } else {
             events.push({ hour: hour, text: text });
         }
+
+
         localStorage.setItem('events', JSON.stringify(events));
       });
 
