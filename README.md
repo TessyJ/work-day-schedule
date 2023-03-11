@@ -7,11 +7,15 @@ https://tessyj.github.io/work-day-schedule/
 https://github.com/TessyJ/work-day-schedule
 
 # Project Description
-This Webpage is a simple calendar application that allows a user to save events for each hour of the day by modifying starter code.
+This Webpage is a simple calendar application that allows users to save events for each hour of the day by modifying the starter code.
 <br>
-This calendar helps to manage time effectively by addding our important events to the daily planner.
+This calendar helps to manage time effectively by adding important events to the daily planner.
 <br>
-It provides a special feature that allows user to knoow which task has been executed, presently executing and is yet to execute by displaying different colors.
+It provides a unique feature that lets the user know the task for the day has been executed, is presently running and also yet to complete by displaying different colours.
+
+
+
+
 
 # Project Screenshot
 <img width="1600" alt="Daily Planner" src="https://tessyj.github.io/work-day-schedule/assets/images/shot1.png">
